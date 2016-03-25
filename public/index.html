@@ -1,0 +1,28 @@
+<html ng-app='HateSite'>
+<head>
+	<title>Don't forget the hate</title>
+	<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js'></script>
+	<script type="text/javascript" src='js/app.js'></script>
+</head>
+<body ng-controller="MainController as mainCtrl">
+<h1>These are the people we hate</h1>
+<ul>
+	<li ng-repeat='person in mainCtrl.people'> 
+		{{person.name}}
+	</li>
+</ul>
+<form ng-submit='mainCtrl.create()'>
+	<input type='text' ng-model='mainCtrl.name' placeholder='name'>
+	<!-- <input type='text' name='reasonsToHate' placeholder='Why do you hate this guy?'> -->
+	<input type='text' ng-model='mainCtrl.imgUrl' placeholder='Internet Photgraph?'>
+	<button>Add to the hate list</button>
+</form>
+
+	<!-- 	name: String,
+	reasonsToHate: Array,
+	imgUrl: String, -->
+{{mainCtrl.hello}}
+
+{{2+2}}
+</body>
+</html>	
