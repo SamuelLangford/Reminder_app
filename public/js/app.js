@@ -1,8 +1,13 @@
 var app = angular.module('HateSite',[])
 
 app.controller('MainController', ['$http', function($http){
-	this.people = [];
 	var controller = this;
+	this.people = [];
+	this.pers = null;
+	this.change = function(name){
+		controller.pers = name;
+		console.log(controller.currentPerson)
+	}
 		$http.get('/people').then(
 			function(response){
 				controller.people = response.data
@@ -21,11 +26,9 @@ app.controller('MainController', ['$http', function($http){
 					// console.log(response);
 					 console.log(response);
            controller.people.push(response.data);
-           controller.name = undefined;
-          
+           controller.name = undefined;          
 				},
 				function(){
-
 					console.log(err)
 				}
 		);//  http request
