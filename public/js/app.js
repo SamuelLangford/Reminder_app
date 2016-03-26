@@ -7,7 +7,7 @@ app.controller('MainController', ['$http', function($http){
 	this.change = function(name){
 		controller.pers = name;
 		console.log(controller.currentPerson)
-	}
+	};
 		$http.get('/people').then(
 			function(response){
 				controller.people = response.data
